@@ -16,10 +16,10 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser());
 app.use(cors(
     {
-        origin: ["http://localhost:5173", "http://localhost:5177"],
-        credentials: true// Allow cookies to be sent with requests
+         origin: process.env.CLIENT_URL,
+        credentials: true
     }
-))
+));
 
 
 app.use("/api/auth",authRoutes);
