@@ -8,6 +8,8 @@ export const generateToken=(userId,res)=>{
     httpOnly:true,
     sameSite:"strict",
     secure: process.env.NODE_ENV!="development" // Use secure cookies in production
+    sameSite: "none",   
+    secure: true,     
   });
   return token;
 
